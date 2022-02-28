@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Makeup</title>
+    <link rel="icon" href="img/PekingOpera.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @font-face {
+            font-family: "Didot";
+            src: url("Didot\ LT\ Std\ Bold.otf") format("otf")
+        }
+
+
+        .container {
+            position: relative;
+            width: 1100px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container .box {
+            position: relative;
+            width: 275px;
+            overflow: hidden;
+            transition: 0.5s;
+            /* align-items: center;
+            justify-content: center; */
+        }
+
+        .container .box:hover {
+            z-index: 1;
+            transform: scale(1.25);
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+             cursor: help;
+        }
+
+        .container .box .imgBx {
+            /* position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; */
+        }
+
+        .container .box .imgBx:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(100deg, #B73733, #000);
+            mix-blend-mode: multiply;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .container .box:hover .imgBx:before {
+            opacity: 1;
+        }
+
+        .container .box .imgBx img {
+            /* position: absolute; */
+            object-fit: cover;
+            justify-content: center;
+        }
+
+        .container .box .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            display: flex;
+            padding: 20px;
+            align-items: flex-end;
+        }
+
+        .container .box .content h2 {
+            font-family: Didot;
+            color: #fff;
+            transition: 0.5s;
+            margin-bottom: 30px;
+            font-size: 30px;
+            transform: translateY(200px);
+        }
+
+        .container .box:hover .content h2 {
+            font-family: Didot;
+            color: #fff;
+            transition: 0.5s;
+            margin-bottom: 90px;
+            font-size: 30px;
+            transform: translateY(0);
+            transition-delay: 0.1s;
+        }
+
+        .container .box .content p {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: #fff;
+            transform: translateY(200px);
+            transition: 0.5s;
+            font-size: 14px;
+        }
+
+        .container .box:hover .content p {
+            transform: translateY(0);
+            transition-delay: 0.1s;
+        }
+
+        img {
+            max-width: 100%;
+            width: 200px;
+        }
+
+        .title {
+            font-family: Didot;
+            font-size: 100px;
+        }
+
+        #text {
+            position: absolute;
+            width: 30vw;
+            text-align: center;
+            left: 35vw;
+            opacity: 0.1;
+            top: 0;
+            cursor: url("img/PekingOpera.png"), url("maskText.png"), 
+          url("img/Mask\ group.png"),help, auto;
+            /* cursor: url("maskText.png") 12 12, auto;	 */
+            cursor: move;
+        }
+        #makeup{
+            width: 40vw;
+            display: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="title">Makeup</div> -->
+    <!-- <p>Peking Opera has a history of only about 200 years. There are other Chinese opera genres
+        that came into existence much earlier, like Kun Opera for example, that was developed already in the 14th
+        century. It is said that Peking Opera had its birth in 1790, when four opera troupes from the province of Anhui
+        came to Beijing to perform on the occasion of the 80th birthday
+        of the Emperor. Soon afterwards, some other theater companies from the region of Hubei fol- lowed. Over the
+        years, Peking Opera was formed through the combination of various music and performing techniques.</p> -->
+    <div class="container">
+        <div class="box">
+            <div class="imgBx">
+                <img id="red" src="img/red.png">
+            </div>
+            <div class="content">
+                <h2>Red</h2>
+                <p>Used on masks that indicate a positive character. Red can also mean prosperity, loyalty, courage and
+                    heroism.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img id="yellow" src="img/yellow.png">
+            </div>
+            <div class="content">
+                <h2>Yellow</h2>
+                <p>Tells the audience that the character is cruel. Yellow can also mean evil, hypocritical, ambitious or
+                    sly.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img id="white" src="img/white.png">
+            </div>
+            <div class="content">
+                <h2>White</h2>
+                <p>Used on masks that indicate the character is evil and hypocritical.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img id="black" src="img/black.png">
+            </div>
+            <div class="content">
+                <h2>Black</h2>
+                <p>Means the character is neutral. Black also indi- cates impartiality and integrity.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img id="green" src="img/green.png">
+            </div>
+            <div class="content">
+                <h2>Green</h2>
+                <p>Shows that the character is violent, impulsive and lacks restraint.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img id="gold" src="img/gold.png">
+            </div>
+            <div class="content">
+                <h2>Gold and Silver</h2>
+                <p>Show the audience that the character is a god or demon. It can also indicate a ghost or a spirit.
+                    Gold And silver symbolize mystery.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img id="pink" src="img/pink.png">
+            </div>
+            <div class="content">
+                <h2>Pink</h2>
+                <p>Pink indicates that the character is old and weak. Pink face can give the audience a feeling that the
+                    character has a pale face.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img id="blue" src="img/blue.png">
+            </div>
+            <div class="content">
+                <h2>Blue</h2>
+                <p>Blue is an indication of neutrality. In addition, Blue can show stubbornness, astuteness and
+                    fierceness.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html">
+        <img id="text" src="img/maskText_big.png">
+    </a>
+
+    <img id="makeup" src="img/makeUp_clear.png">
+
+
+
+
+
+
+</body>
+
+</html>
