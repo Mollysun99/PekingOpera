@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peking Opera</title>
+    <link rel="icon" href="img/PekingOpera.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        @font-face {
+            font-family: "Didot";
+            src: url("Didot\ LT\ Std\ Bold.otf") format("otf")
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(236, 236, 236);
+        }
+
+        .title {
+            font-family: Didot;
+            font-size: 100px;
+            color: rgb(236, 236, 236);
+            top: 1vh;
+            position: absolute;
+        }
+
+        #title:hover {
+            color: #b73733;
+        }
+
+        .paragraph {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #intro {
+            position: absolute;
+            z-index: 2;
+            width: 500px;
+            left: 20vw;
+            top: 10vh;
+        }
+
+        #monkey {
+            max-width: 100%;
+            width: 25vw;
+            margin-right: 0;
+            float: right;
+            z-index: -5;
+            cursor: help;
+        }
+
+        h2 {
+            font-family: Didot;
+            position: absolute;
+            top: 30vh;
+            left: 50vw;
+        }
+
+        #capital {
+            font-size: 60px;
+            cursor: progress;
+        }
+
+        #rest {
+            top: 40vh;
+            color: black;
+            cursor: pointer;
+            /* display: none; */
+        }
+
+        #spread {
+            position: absolute;
+            z-index: 2;
+            width: 300px;
+            left: 50vw;
+            top: 44vh;
+            display: none;
+        }
+        
+
+        #female {
+            position: absolute;
+            z-index: 2;
+            width: 700px;
+            top: 40vh;
+        }
+
+        #dan {
+            position: absolute;
+            z-index: 4;
+            width: 400px;
+            top: 60vh;
+            left: 28vw;
+            cursor: help;
+        }
+        #danIntro{
+            display: none;
+            position: absolute;
+            z-index: 4;
+            width: 200px;
+            top: 50vh;
+            left: 5vw;
+        }
+        
+        h3 {
+            font-family: Didot;
+            color: #ffffff;
+            font-size: 30px;
+        }
+
+        p {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 14px;
+            color: #ffffff;
+        }
+        .container{
+            position: relative;
+            width: 100%;
+        }
+        .container video{
+            width: 420px;
+            position: absolute;
+            z-index: 4;
+            top: 85vh;
+            left: 50vw;
+            object-fit: cover;
+        }
+        .container video:nth-child(2){
+            mix-blend-mode: screen;
+            filter: brightness(2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <a href="https://www.chinaculturetour.com/culture/peking-opera.htm" id="title">Peking Opera</a>
+    </div>
+    <div class="paragraph" id="intro">
+        Peking Opera has a history of only about 200 years. There are other Chinese opera genres
+        that came into existence much earlier, like Kun Opera for example, that was developed already in the 14th
+        century. It is said that Peking Opera had its birth in 1790, when four opera troupes from the province of Anhui
+        came to Beijing to perform on the occasion of the 80th birthday
+        of the Emperor. Soon afterwards, some other theater companies from the region of Hubei fol- lowed. Over the
+        years, Peking Opera was formed through the combination of various music and performing techniques.
+    </div>
+    <a href="mask.html"><img id="monkey" src="img/Mask group.png"></a>
+    <h2>From the <span id="capital">capital</span> to the<span id="rest"> rest of China.</span></h2>
+    <div class="paragraph" id="spread">
+        From 1860 on, numerous mobile companies spread Peking Opera all over China. By the end of the 19th century,
+        Peking Opera had become the most acclaimed opera form in China. Beijing was the center of the theater scene. The
+        Qianmen area in the south of the Forbidden City had developed into a flourishing commercial center packed with
+        theaters, tea houses and restaurants which hosted all kinds of artistic activities and where Peking Opera became
+        a part of daily culture. It became the home of a multitude of famous Peking Opera artists. New structures were
+        introduced for manag- ing theaters and Peking Opera companies.
+    </div>
+    <img id="female" src="img/dance.jpeg">
+    <img id="dan" src="img/dan_white.png">
+    <div class="dan" id="danIntro">
+        <h3>Dan</h3>
+        <p>The Dan refers to any female role in Peking op- era. Dan roles were originally divided into five subtypes.
+            Old women were played by laodan, martial women were wudan, young female war- riors were daomadan, virtuous
+            and elite women were qingyi, and vivacious and unmarried wom- en were huadan. A troupe will have a young Dan
+            to play main roles, as well as an older Dan for secondary parts.
+        </p>
+    </div>
+    <div class="container">
+        <video id="opera" src="Peking Opera.mp4" type="video/mp4" autoplay muted loop></video>
+        <video id="ink" src="ink.mov" type="video/mov" autoplay muted loop></video>
+
+    </div>
+
+
+
+</body>
+
+</html>
